@@ -1,0 +1,40 @@
+<div class="container">
+  <mat-nav-list style="width:100%">
+    <mat-list-item (click)="addPointMeasurementInteraction()"> 
+      <button class="btn" mat-raised-button color="primary">
+        <img src="/assets/iconos/coordenada1.png">
+        Ubicación
+      </button>
+    </mat-list-item>
+    <mat-list-item (click)="addLineMeasurementInteraction()"> 
+      <button class="btn" mat-raised-button color="primary">
+        <img src="/assets/iconos/distancia.png">
+        Distancia  
+      </button>
+    </mat-list-item>
+    <mat-list-item (click)="addPolygonMeasurementInteraction()"> 
+      <button class="btn" mat-raised-button color="primary">
+        <img src="/assets/iconos/Area.png">
+        Área  
+      </button> 
+    </mat-list-item>
+    <mat-list-item (click)="removeInteraction()"> 
+        <button class="btn" mat-raised-button color="primary">
+          <mat-icon>delete_sweep</mat-icon>
+          Borrar  
+        </button> 
+      </mat-list-item>    
+  </mat-nav-list>
+</div>
+
+<div #tooltipHelp class="pointer-tooltip" [ngClass]="{'hidden': !showTooltipHelp}">
+    {{tooltipHelpMessage}}
+</div>
+
+<div #tooltipLocation class="result-tooltip">
+   <div>{{hdms}}</div>
+</div>
+
+<div #tooltipMeasure class="result-tooltip">
+    <div>{{longitud}}</div>
+</div>      

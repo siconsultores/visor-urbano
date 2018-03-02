@@ -1,0 +1,28 @@
+<div class="header mat-elevation-z1">Datos del giro solicitado</div>
+
+<div style="margin: 10px;">
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Superficie del giro (m²)" type="number" [(ngModel)]="ps.estateData.surfaceBusinessLine">
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Escriba el giro" [(ngModel)]="value" (keyup)="search(value)">
+  </mat-form-field>
+
+  <mat-card *ngFor="let businessLine of businessLines"
+    (click)="selectBusinessLine(businessLine)" class="bussinessLineItem">{{ businessLine.nombre }}</mat-card>
+
+</div>
+
+<!--
+<div class="header mat-elevation-z1">En caso de refrendo de Licencia de Giro</div>
+
+<div style="margin: 10px;">
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Número de licencia anterior">
+  </mat-form-field>
+
+</div>
+-->

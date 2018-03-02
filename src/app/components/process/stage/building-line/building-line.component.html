@@ -1,0 +1,45 @@
+<div class="header mat-elevation-z1">Datos del giro solicitado</div>
+
+<div style="margin: 10px;">
+
+  <mat-form-field class="field">
+    <mat-select placeholder="Uso" (change)="selectBusinessLine($event.value)">
+      <mat-option [value]="null">Selecciona Uso</mat-option>
+      <mat-option *ngFor="let uso of usos" [value]="uso">
+        {{uso.uso}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Superficie construida (m²)" type="number" [(ngModel)]="ps.estateData.originalBuildingSurface">
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Superficie a demoler (m²)" type="number" [(ngModel)]="ps.estateData.removedBuildingSurface">
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Superficie nueva a construir (m²)" type="number" [(ngModel)]="ps.estateData.addedBuildingSurface">
+  </mat-form-field>
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Superficie total construida (m²)" type="number"
+           readonly
+           [value]="ps.estateData.originalBuildingSurface - ps.estateData.removedBuildingSurface + ps.estateData.addedBuildingSurface">
+  </mat-form-field>
+
+</div>
+
+<!--
+<div class="header mat-elevation-z1">En caso de refrendo de Licencia de Giro</div>
+
+<div style="margin: 10px;">
+
+  <mat-form-field class="field">
+    <input matInput placeholder="Número de licencia anterior">
+  </mat-form-field>
+
+</div>
+-->

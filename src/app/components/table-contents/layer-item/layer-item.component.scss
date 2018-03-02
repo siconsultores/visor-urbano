@@ -1,0 +1,57 @@
+.item {
+  width: 100%;
+  padding: 5px 15px 3px 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .layer-label {
+    flex: 1;
+    padding: 0 0 0 20px;
+    cursor: pointer;
+  }
+}
+
+.item.item-details {
+  flex-direction: column;
+}
+
+.layer-opacity {
+  width: 100%;
+  height: 48px;
+
+  .opacity-slider-label {
+    margin-left: 8px;
+    font-size: 12px;
+  }
+
+  .opacity-slider-legend {
+    font-size: 12px;
+  }
+
+  mat-slider {
+    position: relative;
+    top: -20px;
+    width: 100%;
+  }
+}
+
+.layer-simbology {
+  width: 100%;
+
+  display: flex;;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 8px;
+
+  .simbology-graphic {
+    align-self: flex-start;
+  }
+}
+
+.hidden {
+  display: none;
+}

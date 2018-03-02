@@ -1,0 +1,46 @@
+<div *ngIf="!giroSeleccionado">
+  <mat-form-field class="form-field">
+    <mat-select placeholder="Elija un distrito" [(ngModel)]="distrito">
+      <mat-option>None</mat-option>
+      <mat-option [value]="1">Distrito 1. Centro Metropolitano</mat-option>
+      <mat-option [value]="2">Distrito 2. Minerva</mat-option>
+      <mat-option [value]="3">Distrito 3. Huentitán</mat-option>
+      <mat-option [value]="4">Distrito 4. Oblatos</mat-option>
+      <mat-option [value]="5">Distrito 5. Olímpica</mat-option>
+      <mat-option [value]="6">Distrito 6. Tetlán</mat-option>
+      <mat-option [value]="7">Distrito 7. Cruz del Sur</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="form-field search-box">
+    <input matInput type="search" placeholder="Giro deseado" [disabled]="!distrito" [(ngModel)]="value" (keyup.enter)="search(value)">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <mat-list *ngIf="giros.length > 0">
+    <mat-list-item *ngFor="let giro of giros" (click)="select(giro, distrito)">
+      {{giro.codigo}} - {{giro.nombre}}
+    </mat-list-item>
+  </mat-list>
+</div>
+<div *ngIf="!!giroSeleccionado">
+  <div>
+    <strong>Giro: </strong>
+    <br>
+    {{giroSeleccionado.codigo}} - {{giroSeleccionado.nombre}}
+  </div>
+  <div>
+    <div><span class="simbologia permitido">&nbsp;&nbsp;&nbsp;</span> Áreas Permitidas</div>
+    <div><span class="simbologia condicionado">&nbsp;&nbsp;&nbsp;</span> Áreas Compatibles</div>
+  </div>
+  <div>
+    <strong>Productos relacionados</strong>
+    <mat-list dense>
+      <mat-list-item *ngFor="let producto of giroSeleccionado.productos">
+        {{producto.descripcion}}
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <button mat-button (click)="clearGiro()">Volver</button>
+</div>

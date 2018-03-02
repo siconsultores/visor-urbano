@@ -1,0 +1,62 @@
+@import "../../../../variables";
+
+/*
+:host {
+  // background-color: rgba($primary-background-color, 0.9);
+  // padding: 2px;
+  pointer-events: auto;
+}
+*/
+
+:host {
+  pointer-events: auto;
+
+  position: absolute;
+  bottom: 12px;
+  left: -130px;
+
+  width: 260px;
+  background: rgba($primary-background-color, 0.9);;
+  padding: 0;
+  max-height: 300px;
+
+  border: 1px solid $secondary-background-color;
+}
+
+.identify-close-button {
+  position: absolute;
+  right: 0;
+  top: -6px;
+
+  mat-icon {
+    color: white;
+  }
+}
+
+.identify-container-title {
+  background: rgba($secondary-background-color, 1);
+  color: white;
+  font-size: 12pt;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+:host:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+:host:after {
+  border-top-color: rgba($secondary-background-color, 0.9);
+  border-width: 10px;
+  left: 130px;
+  margin-left: -10px;
+}

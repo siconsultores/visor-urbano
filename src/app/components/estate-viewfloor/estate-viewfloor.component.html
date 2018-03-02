@@ -1,0 +1,33 @@
+<div class="host" [ngClass]="{'hidden': !show3D}">
+  <div class="atras">
+
+    <div class="view3d-header">
+      <mat-icon class="header-icon">3d_rotation</mat-icon>
+      <h1 class="header-title">Vista Planta</h1>
+
+      <div class="flex-blank-filler"></div>
+
+      <button mat-icon-button class="header-close" (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <div class="view3d-floorview-container">
+      <div class="floor-selector">
+        <mat-nav-list>
+          <mat-list-item class="floor-selector-item clickable nonselectable" *ngFor="let nivel of niveles"
+                         (click)="showPlano(nivel)">
+            {{nivel.name}}
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+      <div class="floor-view-container">
+        <pdf-viewer [src]="pdfSrc"
+                    [render-text]="true"
+                    style="display: block;"
+        ></pdf-viewer>
+      </div>
+    </div>
+
+  </div>
+</div>

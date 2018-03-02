@@ -1,0 +1,8 @@
+<button mat-icon-button class="identify-indicator-container" (click)="toggleIdentify()">
+  <mat-icon class="identify-indicator">{{ handlerId ? "info" : "info_outline" }}</mat-icon>
+</button>
+
+<sic-identify-result [position]="identifyCoordinates" [services]="identifyData"
+                     (onClose)="cleanIdentify()"
+                     class="mat-elevation-z2">
+</sic-identify-result>

@@ -1,0 +1,19 @@
+<mat-list>
+  <mat-list-item class="nonselectable clickable" (click)="openToC()">
+    <mat-icon>layers</mat-icon>
+    <span>Capas</span>
+  </mat-list-item>
+  <mat-list-item class="nonselectable">
+    <mat-icon>info</mat-icon>
+    <span>Identifica</span>
+    <mat-slide-toggle (change)="toggleIdentifica($event)"></mat-slide-toggle>
+  </mat-list-item>
+  <mat-list-item class="nonselectable clickable" (click)="openSimulador()" *ngIf="largeScreen">
+    <mat-icon>visibility_on</mat-icon>
+    <span>Simulador</span>
+  </mat-list-item>
+  <mat-list-item class="nonselectable clickable" (click)="openMedicion()" *ngIf="largeScreen">
+    <img src="/assets/iconos/distancia.png" alt="medicion">
+    <span>Medición</span>
+  </mat-list-item>
+</mat-list>

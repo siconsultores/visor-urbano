@@ -1,0 +1,24 @@
+<div class="ripple-container"
+     [class.ripple-disabled]="disabledR"
+     [class.ripple-rounded]="rounded"
+     mat-ripple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="rippleColor"
+     [matRippleSpeedFactor]="rippleSpeed"
+     [matRippleTrigger]="toolbutton">
+
+  <div class="tool clickable nonselectable"
+       #toolbutton
+       [title]="tool.label"
+       (click)="execAction()"
+       [matTooltip]="tool.tooltip">
+    <div class="tool-icon">
+      <mat-icon class="icon" [class.icon-disabled]="disabled">{{tool.icon}}</mat-icon>
+    </div>
+    <div class="tool-label" [class.label-disabled]="disabled">{{tool.label}}</div>
+  </div>
+
+</div>

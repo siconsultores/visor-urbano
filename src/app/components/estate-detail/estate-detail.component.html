@@ -1,0 +1,48 @@
+<div class="pago-detalle" [ngClass]="{'adeudo': adeudo}">
+  <mat-icon [color]="adeudo ? 'warn' : 'primary'">{{adeudo ? 'report_problem' : 'check_circle'}}</mat-icon>
+  <span class="detalle-pago-text" [ngClass]="{'adeudo': adeudo}">Condición</span>
+  <span class="detalle-pago-text" [ngClass]="{'adeudo': adeudo}">{{adeudo ? 'CON ADEUDO' : 'SIN ADEUDO'}}</span>
+</div>
+
+<div class="tabla-detalle">
+  <mat-list>
+    <mat-list-item class="detalle-row" *ngFor="let fila of detallesPredio">
+      <span class="detalle-field">{{fila.field}}</span>
+      <span class="detalle-value">{{fila.value}}</span>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<sic-info-construccion [licencias]="licenciasConstruccionPredio"></sic-info-construccion>
+<sic-info-licencias [licencias]="licenciasPredio"></sic-info-licencias>
+
+<div class="tramite-container" *ngIf="adeudo">
+  <h3>NOTA:</h3>
+  <p>
+    Si es el propietario le invitamos a regularizar su situación, para lo cual le presentamos las siguientes opciones de pago:
+  </p>
+  <ul>
+    <li>Acuda a su recaudadora más cercana</li>
+    <li>Realice su pago en línea <a href="https://pagoenlinea.guadalajara.gob.mx/predial/" target="_blank">aqui</a> </li>
+  </ul>
+</div>
+
+<div class="tramite-container">
+  <div class="tramite-legend">Elige tu trámite</div>
+  <div class="tramite-action" *ngIf="predio.cartografia.condominio !== 1; else isPredioCondominio">
+    <button mat-raised-button color="primary" class="small-button" (click)="iniciarTramite('construccion')">
+      <mat-icon>business</mat-icon>
+      <span>Construir</span>
+    </button>
+    <button mat-raised-button color="primary" class="small-button" (click)="iniciarTramite('negocio')">
+      <mat-icon>store</mat-icon>
+      <span>Abrir Negocio</span>
+    </button>
+  </div>
+  <ng-template #isPredioCondominio>
+    <div class="tramite-accion">
+      El Predio se encuentra constituido en regimen de Condominio. Acuda a la Dirección de Ordenamiento del Territorio si desea realizar algún trámite.
+    </div>
+  </ng-template>
+</div>
+

@@ -1,0 +1,102 @@
+<div>
+  <div class="header mat-elevation-z1">Verifique que los datos sean correctos</div>
+  <mat-tab-group>
+    <mat-tab label="PREDIO">
+
+      <table class="grid">
+        <tr>
+          <th>CONCEPTOS</th>
+          <th>DATOS</th>
+        </tr>
+      <!-- <tr>
+          <td>Cuenta</td>
+          <td>{{ estateData.recaudadora }}-{{ estateData.tipoPredio }}-{{ estateData.cuenta }}</td>
+        </tr> -->
+        <tr>
+          <td>Clave</td>
+          <td>{{ estateData.cartografia.clave }}</td>
+        </tr>
+        <tr>
+          <td>Clave Normalizada</td>
+          <td>{{ estateData.cartografia.claveINEGI }}</td>
+        </tr>
+        <tr>
+          <td>Ubicación</td>
+          <td>{{ estateData.calle }} {{ estateData.numeroExterior }}</td>
+        </tr>
+        <tr>
+          <td>Colonia</td>
+          <td>{{ estateData.colonia }}</td>
+        </tr>
+        <tr>
+          <td>Código Postal</td>
+          <td></td>
+        </tr>
+        <tr *ngIf="estateData.areaTitulo != ''">
+          <td>Área de Terreno (legal)</td>
+          <td>{{ estateData.areaTitulo | number : '1.2-2' }} m²</td>
+        </tr>
+        <tr *ngIf="estateData.cartografia.poligono.area != ''">
+          <td>Área de Terreno (cartografía)</td>
+          <td>{{ estateData.cartografia.poligono.area | number : '1.2-2' }} m²</td>
+        </tr>
+        <tr *ngIf="estateData.avaluo.areaConstruccionAvaluo != ''">
+          <td>Superficie Total de Construcción</td>
+          <td>{{ estateData.avaluo.areaConstruccionAvaluo | number : '1.2-2' }} m²</td>
+        </tr>
+        <tr *ngIf=" estateData.avaluo.frente != ''">
+          <td>Frente</td>
+          <td>{{ estateData.avaluo.frente | number : '1.2-2' }} m</td>
+        </tr>
+        <tr *ngIf=" estateData.avaluo.fondo != ''">
+          <td>Fondo</td>
+          <td>{{ estateData.avaluo.fondo | number : '1.2-2' }} m</td>
+        </tr>
+      </table>
+
+    </mat-tab>
+    <mat-tab label="Construcciones" *ngIf="estateData.avaluo.detalleAvaluo.length > 0">
+      <table class="grid">
+        <tr>
+          <th>Bloque</th>
+          <th>Pisos</th>
+          <th>Superficie</th>
+        </tr>
+        <tr *ngFor="let cons of estateData.avaluo.detalleAvaluo">
+          <td style="text-align: center;"> {{ cons.cvebloque}} </td>
+          <td style="text-align: center;"> {{ cons.numeroPisos}} </td>
+          <td> {{ cons.areaConstruida}} m²</td>
+        </tr>
+      </table>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<div class="footer-section">
+  <div style="font-weight: bold;">¿La información es correcta?</div>
+  <mat-radio-group [(ngModel)]="hayComentario1">
+    <mat-radio-button [value]="false">SI, la información es correcta</mat-radio-button>
+    <mat-radio-button [value]="true">NO, los datos contienen errores</mat-radio-button>
+  </mat-radio-group>
+  <div *ngIf="hayComentario1">
+    <div *ngIf="!comentarioEnviado" class="comentario comentario-form">
+      <div style="font-weight: bold;">Por favor explique la situación</div>
+      <mat-form-field>
+        <input matInput placeholder="Nombre" [(ngModel)]="comentario1.nombre">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Correo electrónico" [(ngModel)]="comentario1.correo">
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea matInput placeholder="Observación" [(ngModel)]="comentario1.mensaje"></textarea>
+      </mat-form-field>
+
+      <button mat-button (click)="enviarObservacion(comentario1)">Enviar Observación</button>
+    </div>
+    <div class="comentario comentario-enviado" *ngIf="comentarioEnviado">
+      Su observación ha sido recibida. Puede continuar con su solicitud
+    </div>
+  </div>
+</div>

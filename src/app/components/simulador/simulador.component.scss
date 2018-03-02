@@ -1,0 +1,26 @@
+:host {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.simbologia {
+  position: relative;
+  width: 15px;
+  height: 15px;
+
+  &.permitido {
+    border: 1px solid rgba(0,104,55,.8);
+    background-color: rgba(157,190,21,0.6);
+  }
+
+  &.condicionado {
+    border: 1px solid rgba(241,90,36,.8);
+    background-color: rgba(255,255,0,0.6);
+  }
+}

@@ -1,0 +1,13 @@
+<button mat-button class="back nonselectable clickable" (click)="back()">
+  <mat-icon *ngIf="currentStep > 1">chevron_left</mat-icon>
+  {{currentStep == 1 ? '' : 'Volver'}}
+</button>
+<div class="steps">
+  <span *ngFor="let step of steps | repeat; let idx = index" class="step-point" [ngClass]="{'step-on': idx < currentStep}">
+
+  </span>
+</div>
+<button mat-button class="next nonselectable clickable" (click)="next()">
+  {{currentStep < steps - 1 ? 'Siguiente' : 'Enviar'}}
+  <mat-icon *ngIf="currentStep < steps - 1">chevron_right</mat-icon>
+</button>

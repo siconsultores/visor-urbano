@@ -1,0 +1,9 @@
+@import "../../../../../variables";
+
+.service-title {
+  font-size: 11pt;
+  font-weight: bold;
+  background-color: rgba($secondary-background-color, 0.5);
+
+  padding: 3px 10px;
+}

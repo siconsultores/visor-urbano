@@ -1,0 +1,103 @@
+@import "../../../variables";
+
+.host {
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 500;
+
+  background-color: rgba(blue, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.atras {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .header-title {
+    display: none;
+  }
+
+  .atras {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.view3d-header {
+  height: 48px;
+  background-color: $secondary-background-color;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $accent-color;
+
+  * {
+    color: $primary-background-color;
+  }
+
+  .header-icon {
+    margin: 0 15px;
+  }
+
+  .header-search {
+    width: 400px;
+  }
+}
+
+.view3d-cesium-container {
+  background-color: #9ea6b2;
+
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+
+  #cesiumContainer {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+}
+
+.cesium-credits {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+
+  .cesium-widget-credits {
+    display: none !important;
+  }
+}
+
+.view3d-identifica {
+  position: absolute;
+  top: 58px;
+  right: 10px;
+
+  width: 250px;
+  height: 360px;
+
+  background-color: #3d9c22;
+
+  display: none;
+
+}
+
+.hidden {
+  display: none !important;
+}

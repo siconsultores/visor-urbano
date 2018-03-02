@@ -1,0 +1,41 @@
+<div class="host" [ngClass]="{'hidden': !show3D}">
+<div class="atras">
+
+  <div class="view3d-header">
+
+
+    <mat-icon class="header-icon">3d_rotation</mat-icon>
+    <h1 class="header-title">Vista 3D</h1>
+
+    <div class="flex-blank-filler"></div>
+
+    <mat-form-field floatPlaceholder="never">
+      <input matInput
+             #searchform
+             (keyup.enter)="search(searchform.value)"
+             [formControl]="myControl"
+             type="search" class="header-search"
+             placeholder="Unidad Privativa">
+    </mat-form-field>
+
+    <button mat-icon-button class="header-search-icon" (click)="search(searchform.value)">
+      <mat-icon>search</mat-icon>
+    </button>
+
+    <div class="flex-blank-filler"></div>
+
+    <button mat-icon-button class="header-close" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="view3d-cesium-container">
+    <div id="cesiumContainer"></div>
+  </div>
+
+  <div id="credits" class="cesium-credits"></div>
+
+  <div class="view3d-identifica" *ngIf="false">identifica</div>
+
+</div>
+</div>

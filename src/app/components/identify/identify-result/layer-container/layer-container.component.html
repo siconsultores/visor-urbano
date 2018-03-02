@@ -1,0 +1,6 @@
+<div>
+  <div class="layer-title">{{layer.name}}</div>
+  <sic-attribute-container *ngFor="let propertie of layer.properties;"
+                       [key]="propertie.key" [value]="propertie.value">
+  </sic-attribute-container>
+</div>

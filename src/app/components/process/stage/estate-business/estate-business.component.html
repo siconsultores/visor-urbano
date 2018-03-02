@@ -1,0 +1,8 @@
+<div class="header mat-elevation-z1">Relación entre el negocio y el predio</div>
+
+<div style="margin-top: 10px;">
+  <mat-radio-group class="radio-group" [(ngModel)]="option">
+    <mat-radio-button class="radio-button" [value]="1" (click)="setSurfaceType(1)"> Totalidad del predio </mat-radio-button>
+    <mat-radio-button class="radio-button" [value]="2" (click)="setSurfaceType(2)"> Parcialidad del predio </mat-radio-button>
+  </mat-radio-group>
+</div>

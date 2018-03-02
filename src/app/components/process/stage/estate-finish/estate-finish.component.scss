@@ -1,0 +1,60 @@
+:host {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner-loader {
+  display: flex;
+  justify-content: center;
+}
+
+.result-container {
+  width: 60%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.application-icon-approved {
+  color: rgb(108, 192, 74);
+  font-size: 3em;
+  height: 50px;
+  width: 50px;
+}
+
+.application-icon-conditioned {
+  color: orange;
+  font-size: 3em;
+  height: 50px;
+  width: 50px;
+}
+
+.application-icon-denied {
+  color: red;
+  font-size: 3em;
+  height: 50px;
+  width: 50px;
+}
+
+.application-text {
+  color: rgb(144, 144, 144);
+}
+
+.content {
+  width: 90%;
+  text-align: center;
+  color: rgb(144, 144, 144);
+  font-size: .8em;
+}
+
+.logo-section {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

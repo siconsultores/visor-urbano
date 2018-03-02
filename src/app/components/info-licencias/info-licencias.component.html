@@ -1,0 +1,24 @@
+<h3 class="section-title">Licencias de Giro Comercial:</h3>
+
+<p *ngIf="licencias.length <= 0" class="section-title">
+  No se encontraron licencias vinculadas a este predio.
+</p>
+
+<mat-table [dataSource]="licenciasDS" *ngIf="licencias.length > 0">
+  <!-- Columns definition -->
+  <ng-container matColumnDef="noLicencia">
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let licencia"> {{licencia.licencia}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="fecha">
+    <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+    <mat-cell *matCellDef="let licencia"> {{licencia.fecha_otorgamiento}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actividad">
+    <mat-header-cell *matHeaderCellDef> Actividad </mat-header-cell>
+    <mat-cell *matCellDef="let licencia"> {{licencia.actividad}} </mat-cell>
+  </ng-container>
+  <!-- Rows definition -->
+  <mat-header-row *matHeaderRowDef="['noLicencia', 'fecha', 'actividad']"></mat-header-row>
+  <mat-row *matRowDef="let myRowData; columns: ['noLicencia', 'fecha', 'actividad']"></mat-row>
+</mat-table>

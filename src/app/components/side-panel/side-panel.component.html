@@ -1,0 +1,22 @@
+<div class="panel mat-elevation-z2" [@toggleSidePanel]='state'>
+
+  <header class="panel-header large-header" *ngIf="header == 'large'">
+    <button mat-icon-button class="back-button" (click)="closePanel()">
+      <mat-icon class="header-icon">arrow_back</mat-icon>
+    </button>
+    <img src="assets/logo.svg" alt="Visor Urbano">
+  </header>
+
+  <header class="panel-header small-header" *ngIf="header == 'small'">
+    <mat-icon class="header-icon">visibility_on</mat-icon>
+    <span class="panel-title">{{title}}</span>
+    <div class="flex-blank-filler"></div>
+    <button mat-icon-button class="close-button" (click)="closePanel()">
+      <mat-icon class="header-icon">close</mat-icon>
+    </button>
+  </header>
+
+  <div class="portal-host" #portalHostDiv>
+
+  </div>
+</div>

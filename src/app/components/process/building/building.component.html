@@ -1,0 +1,31 @@
+<div>
+
+  <div [ngSwitch]="steps[currentStep]">
+
+    <ng-template [ngSwitchCase]="processStage.Choose">
+      <sic-estate-building></sic-estate-building>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="processStage.Details">
+      <sic-estate-details></sic-estate-details>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="processStage.Drawing">
+      <sic-estate-drawing></sic-estate-drawing>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="processStage.Line">
+      <sic-building-line></sic-building-line>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="processStage.Finish">
+      <sic-estate-finish></sic-estate-finish>
+    </ng-template>
+
+  </div>
+
+</div>
+
+<sic-bottom-step [steps]="steps.length" [currentStep]="currentStep + 1" (prevStep)="previousStep($event)" (nextStep)="nextStep($event)"></sic-bottom-step>
+
+<div class="blackdrop" ></div>

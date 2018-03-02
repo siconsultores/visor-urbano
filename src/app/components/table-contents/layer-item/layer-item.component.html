@@ -1,0 +1,22 @@
+<div class="item">
+  <mat-icon color="primary" class="clickable" (click)="toggleDetails(layer)">
+    {{!!showDetails?'remove_circle':'add_circle'}}
+  </mat-icon>
+  <span class="noselect clickable layer-label" (click)="toggleDetails(layer)">{{layer.title}}</span>
+  <mat-slide-toggle (change)="toggle(layer, $event)" [checked]="layer.layer.getVisible()"></mat-slide-toggle>
+</div>
+
+<div class="item item-details"  *ngIf="showDetails" > <!-- [ngClass]="{'hidden': showDetails}" -->
+  <div class="layer-opacity">
+    <label for="opacity-slider" class="opacity-slider-label">Opacidad</label>
+    <span class="opacity-slider-legend">{{oslider.value * 100 | number:'1.0-0'}}%</span>
+    <mat-slider id="opacity-slider" min="0" max="1" step="0.01"
+               [value]="layer.layer.getOpacity()" #oslider color="warn"
+               (change)="updateOpacity(layer, $event.value)"
+               (input)="updateOpacity(layer, $event.value)"></mat-slider>
+  </div>
+  <div class="layer-simbology">
+    <span class="simbology-legend">Simbología</span>
+    <img [src]="layer.original.symbology" width="300px">
+  </div>
+</div>

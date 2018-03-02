@@ -1,0 +1,8 @@
+@import "../../../../../variables";
+
+.layer-title {
+  display: flex;
+  justify-content: center;
+  font-size: 11pt;
+  background-color: rgba($secondary-background-color, 0.2);
+}

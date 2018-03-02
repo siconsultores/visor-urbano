@@ -1,0 +1,53 @@
+@import "../../../variables";
+
+.tool {
+  width: 100px;
+  height: 50px;
+  padding: 5px 5px 0 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  color: $primary-foreground-color;
+
+  &:hover, &.selected {
+    font-weight: bold;
+  }
+
+  .tool-label {
+    font-size: 10pt;
+
+    &.label-disabled {
+      color: lighten($secondary-foreground-color, 25%);
+    }
+  }
+
+  .tool-icon .icon-disabled {
+    color: lighten($secondary-foreground-color, 25%);
+  }
+}
+
+
+// Basado en el repositorio del equipo de Angular material 2
+// https://github.com/angular/material2/blob/master/src/demo-app/ripple/ripple-demo.scss
+.ripple-container {
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  transition: all 200ms linear;
+
+  &.ripple-disabled {
+    color: rgba($secondary-background-color, 0.4);
+  }
+
+  &.ripple-rounded {
+    border-radius: 50%;
+    overflow: hidden;
+    // z-index needed to make clipping to border-radius work correctly.
+    // http://stackoverflow.com/questions/20001515/chrome-bug-border-radius-not-clipping-contents-when-combined-with-css-transiti
+    z-index: 1;
+  }
+}
+

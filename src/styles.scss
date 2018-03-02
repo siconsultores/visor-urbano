@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+// @import "themes";
+
+body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $basic-font-family;
+  color: $primary-foreground-color;
+}
+
+@for $zValue from 0 through 24 {
+  .mat-elevation-z#{$zValue} {
+    z-index: $zValue * 100;
+  }
+}
+
+.clickable {
+  cursor: pointer !important;
+}
+
+.nonselectable {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flex-blank-filler {
+  flex: 1 1 auto;
+}
+
+
+.ol-control.ol-zoom {
+  position: fixed !important;
+  bottom: .5em !important;
+  right: .5em !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+.search-snackbar .mat-simple-snackbar {
+  color: white !important;
+}

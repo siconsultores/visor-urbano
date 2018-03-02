@@ -1,0 +1,43 @@
+<div class="result-container">
+
+  <mat-icon *ngIf="applicationStatus === 'RECIBIDA' || applicationStatus === 'PERMITIDO'" class="application-icon-approved">check_circle</mat-icon>
+  <mat-icon *ngIf="applicationStatus === 'CONDICIONADO'" class="application-icon-conditioned">check_circle</mat-icon>
+  <mat-icon *ngIf="applicationStatus === 'PROHIBIDO'" class="application-icon-denied">cancel</mat-icon>
+
+  <span class="application-text">{{ applicationText }}</span>
+
+</div>
+
+<div class="content">
+
+  <div *ngIf="applicationStatus === 'RECIBIDA'; else applicationProcessed" class="spinner-loader">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-template #applicationProcessed>
+
+    <div *ngIf="applicationStatus !== 'PROHIBIDO'; else applicationDenied">
+      <!-- Una copia de su solicitud se ha enviado a su correo electrónico. Asi como instrucciones para continuar con su trámite. -->
+      El número de <span style="color: rgb(108, 192, 74);">FOLIO es: {{ expediente.trim() }}</span>
+
+      <br>
+      <br> Ahora puedes tramitar tu licencia
+
+      <br>
+      <br>
+
+      <button mat-raised-button color="primary" style="width: 200px;" (click)="ReTramitar()">Tramitar Licencia</button>
+    </div>
+
+    <ng-template #applicationDenied>
+      Su solicitud no cumple con los lineamientos establecidos en los planes parciales de su ubicación.
+    </ng-template>
+
+  </ng-template>
+
+</div>
+
+<div class="logo-section">
+  <img src="/assets/iconBloomberg.png" alt="Bloomberg Philanthropies">
+  <img src="/assets/iconGobierno.png" alt="Gobierno de Guadalajara">
+</div>

@@ -1,0 +1,143 @@
+@import "~normalize.css";
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "variables";
+
+// Color palette
+$sic-visor-urbano: (
+  50 : #edf7e9,
+  100 : #d3ecc9,
+  200 : #b6e0a5,
+  300 : #98d380,
+  400 : #82c965,
+  500 : #6cc04a,
+  600 : #64ba43,
+  700 : #59b23a,
+  800 : #4faa32,
+  900 : #3d9c22,
+  A100 : #e0ffd9,
+  A200 : #b7ffa6,
+  A400 : #8eff73,
+  A700 : #7aff59,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$sic-visor-urbano-dark: (
+  50 : #e8eaed,
+  100 : #c5cad1,
+  200 : #9ea6b2,
+  300 : #778293,
+  400 : #5a687c,
+  500 : #3d4d65,
+  600 : #37465d,
+  700 : #2f3d53,
+  800 : #273449,
+  900 : #1a2537,
+  A100 : #7aa8ff,
+  A200 : #4787ff,
+  A400 : #1466ff,
+  A700 : #0057fa,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$sic-visor-urbano-primary: mat-palette($sic-visor-urbano);
+$sic-visor-urbano-accent:  mat-palette($sic-visor-urbano-dark);
+
+// The warn palette is optional (defaults to red).
+$sic-visor-urbano-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$sic-visor-urbano-theme: mat-light-theme($sic-visor-urbano-primary, $sic-visor-urbano-accent, $sic-visor-urbano-warn);
+
+// Creates a container object for a light theme to be given to individual component theme mixins.
+//  @function mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+//    @return (
+//      primary: $primary,
+//      accent: $accent,
+//      warn: $warn,
+//      is-dark: false,
+//      foreground: $mat-light-theme-foreground,
+//      background: $mat-light-theme-background,
+//    );
+//  }
+
+// Foreground palette for light themes.
+//  $mat-light-theme-foreground: (
+//    base:              black,
+//    divider:           $black-12-opacity,
+//    dividers:          $black-12-opacity,
+//    disabled:          rgba(black, 0.38),
+//    disabled-button:   rgba(black, 0.38),
+//    disabled-text:     rgba(black, 0.38),
+//    hint-text:         rgba(black, 0.38),
+//    secondary-text:    rgba(black, 0.54),
+//    icon:              rgba(black, 0.54),
+//    icons:             rgba(black, 0.54),
+//    text:              rgba(black, 0.87),
+//    slider-min:        rgba(black, 0.87),
+//    slider-off:        rgba(black, 0.26),
+//    slider-off-active: rgba(black, 0.38),
+//  );
+
+// Background palette for light themes.
+//  $mat-light-theme-background: (
+//    status-bar: map_get($mat-grey, 300),
+//    app-bar:    map_get($mat-grey, 100),
+//    background: map_get($mat-grey, 50),
+//    hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+//    card:       white,
+//    dialog:     white,
+//    disabled-button: $black-12-opacity,
+//    raised-button: white,
+//    focused-button: $black-6-opacity,
+//    selected-button: map_get($mat-grey, 300),
+//    selected-disabled-button: map_get($mat-grey, 400),
+//    disabled-button-toggle: map_get($mat-grey, 200),
+//    unselected-chip: map_get($mat-grey, 300),
+//    disabled-list-option: map_get($mat-grey, 200),
+//  );
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($sic-visor-urbano-theme);

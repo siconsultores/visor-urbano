@@ -1,0 +1,28 @@
+<h3 class="section-title">Licencias de Construcción:</h3>
+
+<p *ngIf="licencias.length <= 0" class="section-title">
+  No se encontraron licencias vinculadas a este predio.
+</p>
+
+<mat-table [dataSource]="licenciasDS" *ngIf="licencias.length > 0">
+  <!-- Columns definition -->
+  <ng-container matColumnDef="noLicencia">
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let licencia"> {{licencia.nolicencia}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="fecha">
+    <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+    <mat-cell *matCellDef="let licencia"> {{licencia.fecharecep}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="tramite">
+    <mat-header-cell *matHeaderCellDef> Trámite </mat-header-cell>
+    <mat-cell *matCellDef="let licencia"> {{licencia.tramite}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="estatus">
+    <mat-header-cell *matHeaderCellDef> Estatus </mat-header-cell>
+    <mat-cell *matCellDef="let licencia"> {{licencia.estatus}} </mat-cell>
+  </ng-container>
+  <!-- Rows definition -->
+  <mat-header-row *matHeaderRowDef="['noLicencia', 'fecha', 'tramite', 'estatus']"></mat-header-row>
+  <mat-row *matRowDef="let myRowData; columns: ['noLicencia', 'fecha', 'tramite', 'estatus']"></mat-row>
+</mat-table>

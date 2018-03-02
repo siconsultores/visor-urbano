@@ -1,0 +1,9 @@
+<!-- div class="identify-container" -->
+  <button mat-icon-button class="identify-close-button" (click)="closeOverlay()">
+    <mat-icon color="white">close</mat-icon>
+  </button>
+  <div class="identify-container-title">Identifica</div>
+  <div style="max-height: 270px; overflow: auto;">
+    <sic-service-container *ngFor="let service of services" [service]="service"></sic-service-container>
+  </div>
+<!-- /div -->

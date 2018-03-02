@@ -1,0 +1,381 @@
+{
+  "layers": [
+    {
+      "title": "Ortofoto 2017",
+      "opacity": 1,
+      "visible": false,
+      "selectable": false,
+      "source": {
+        "type": "TileWMS",
+        "url": "https://mapa.guadalajara.gob.mx:8443/geoserver/gdlsig/wms",
+        "params": {
+          "LAYERS": "gdlsig:orto_2017",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1",
+          "TILED": "true"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ]
+    },
+    {
+      "title": "Mapa Base",
+      "opacity": 1,
+      "visible": true,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:MapaBase",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:MapaBase&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Catastro",
+      "opacity": 1,
+      "visible": true,
+      "selectable": true,
+      "active": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:PredioConstruccion",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:PredioConstruccion&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Zonificación",
+      "opacity": 0.75,
+      "visible": true,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:Zonificacion",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:Zonificacion&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Certidumbre Catastral",
+      "opacity": 1,
+      "visible": false,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:CertidumbreCatastral",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:CertidumbreCatastral&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "PIUES y Barrios Tradicionales",
+      "opacity": 1,
+      "visible": false,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:PIUES y Barrios Tradicionales",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:PIUES y Barrios Tradicionales&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Licencias de Construcción",
+      "opacity": 1,
+      "visible": false,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://mapa.guadalajara.gob.mx:8080/geoserver/leafletvisor/wms",
+        "params": {
+          "LAYERS": "leafletvisor:V_LicenciasGeo_estatus",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://mapa.guadalajara.gob.mx:8080/geoserver/leafletvisor/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&SCALE=60&WIDTH=20&HEIGHT=20&LAYER=leafletvisor:V_LicenciasGeo_estatus&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:12;bgColor:0xFFFFFF;dpi:300"
+    },
+    {
+      "title": "Licencias para Negocios",
+      "opacity": 1,
+      "visible": false,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:LicenciasActivas",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:LicenciasActivas&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Denue 2017",
+      "opacity": 1,
+      "visible": false,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:Denue2017",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:Denue2017&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Denue Grupos",
+      "opacity": 1,
+      "visible": false,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:DenueCluster",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:DenueCluster&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Tablas de Valores 2018",
+      "opacity": 1,
+      "visible": false,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:Valores",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:Valores&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Patrimonio INAH",
+      "opacity": 1,
+      "visible": false,
+      "selectable": true,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:PatrimonioINAH",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:PatrimonioINAH&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    },
+    {
+      "title": "Patrimonio SCJ",
+      "opacity": 1,
+      "selectable": true,
+      "visible": false,
+      "source": {
+        "type": "TileWMS",
+        "url": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/wms",
+        "params": {
+          "LAYERS": "gic:PatrimonioSCJ",
+          "FORMAT": "image/png",
+          "VERSION": "1.1.1"
+        },
+        "serverType": "geoserver",
+        "projection": {
+          "code": "EPSG:6368",
+          "units": "m",
+          "axisOrientation": "neu"
+        }
+      },
+      "type": "Tile",
+      "extent": [
+        629991.9308533142,
+        2245145.2284748494,
+        731688.2877768732,
+        2326882.4126336505
+      ],
+      "symbology": "http://visorurbano.guadalajara.gob.mx:8080/geoserver/gic/wms?service=WMS&version=1.1.0&request=GetLegendGraphic&layer=gic:PatrimonioSCJ&styles=&width=16&height=16&format=image/png&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:8;bgColor:0xFFFFFF;dpi:300;forceLabels:on"
+    }
+  ]
+}

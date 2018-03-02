@@ -1,0 +1,19 @@
+<div class="ubicacion-predio mat-elevation-z1">
+  <mat-icon class="zonificacion">store</mat-icon>
+  <div class="ubicacion-datos" *ngIf="vinculado; else novinculo">
+    <h3 class="ubicacion">{{ubicacion}}</h3>
+    <h4 class="colonia">{{colonia}}</h4>
+    <h4 class="clave">{{clave}}</h4>
+  </div>
+  <ng-template #novinculo>
+    <div class="ubicacion-datos">
+      El Predio seleccionado no se encuentra vinculado al padrón catastral.
+    </div>
+  </ng-template>
+  <button mat-icon-button class="close-panel" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div class="acciones-predio mat-elevation-z2">
+  <sic-rippled-button [tool]="tool" *ngFor="let tool of tools" [disabled]="tool.disabled"></sic-rippled-button>
+</div>

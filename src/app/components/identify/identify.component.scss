@@ -1,0 +1,46 @@
+@import "../../../variables";
+
+:host {
+  pointer-events: none;
+}
+
+.identify-indicator-container {
+  pointer-events: auto;
+  position: fixed;
+  bottom: 85px;
+  right: 5px;
+
+  background-color: rgba(0,60,136,.5); //rgba($secondary-background-color, 0.5);
+}
+
+.identify-indicator {
+  color: rgba(white, 0.95);
+}
+
+
+/*
+.identify-result {
+  pointer-events: auto;
+
+  position: fixed;
+  top: 150px;
+  right: 5px;
+}
+
+.identify-result:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.identify-result:after {
+  border-top-color: rgba($secondary-background-color, 0.9);
+  border-width: 10px;
+  left: 120px;
+  margin-left: -10px;
+}
+*/

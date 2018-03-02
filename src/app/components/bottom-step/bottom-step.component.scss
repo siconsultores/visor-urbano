@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+:host {
+  width: 100%;
+  height: 48px;
+  padding: 6px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.steps {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .step-point {
+    width: 10px;
+    height: 10px;
+    background-color: $secondary-foreground-color;
+    margin: 5px;
+    border-radius: 50%;
+
+    &.step-on {
+      background-color: $accent-color;
+    }
+  }
+
+}

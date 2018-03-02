@@ -1,0 +1,89 @@
+@import "../../../variables";
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 95%;
+  max-width: 360px;
+
+  pointer-events: none;
+
+  z-index: 999;
+
+  .panel {
+    background-color: $primary-background-color;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    pointer-events: auto;
+
+    .panel-header {
+      color: white;
+      background-color: $secondary-background-color;
+
+      &.large-header {
+        height: 148px;
+        max-height: 148px;
+        min-height: 148px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 15px;
+
+        img {
+          width: 144.7px;
+          height: 66.5px;
+        }
+
+        .back-button {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+        }
+
+      }
+
+      &.small-header {
+        height: 50px;
+        max-height: 50x;
+        min-height: 50px;
+
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .panel-title {
+          padding-left: 15px;
+          color: white;
+          font-size: 14pt;
+        }
+
+      }
+    }
+
+
+    .portal-host {
+      display: flex;
+      flex: 1 1 auto;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+}
+
+.header-icon {
+  color: white;
+}

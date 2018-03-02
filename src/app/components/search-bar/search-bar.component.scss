@@ -1,0 +1,51 @@
+@import '../../../variables';
+
+:host {
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  max-width: 360px !important;
+
+  padding: 8px;
+
+  z-index: 500;
+}
+
+.search-component{
+  position: relative;
+  width: 100%;
+  padding: 0 0px;
+  /* z-index: 1000; */
+}
+
+.search-input {
+  height:48px;
+  margin:0;
+  border: 0;
+  border-radius: 2px;
+  padding-left: 67px;
+  padding-right: 56px;
+  width: 100%;
+  background-color: $primary-background-color !important;
+}
+.search-icon {
+  position:absolute;
+  top: 12px;
+  right: 16px;
+}
+
+.menu-icon {
+  position:absolute;
+  top: 12px;
+  left: 16px;
+}
+
+.separator {
+  position: absolute;
+  left: 56px;
+  top: 6px;
+  width: 1px;
+  height: 36px;
+  background: #d7d7d7;
+}
